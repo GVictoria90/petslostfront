@@ -3,34 +3,48 @@ export const basePathName = '/'
 export const routes = {
   root: { url: basePathName },
   home: {
-    url: '/inicio'
+    url: '/inicio',
+    public: true
   },
   contact: {
-    url: '/contacto'
+    url: '/contacto',
+    public: true
   },
   login: {
-    url: '/login'
+    url: '/login',
+    public: true
+  },
+  logout: {
+    url: '/logout',
+    public: false
   },
   nuevamascota: {
-    url: '/nuevamascota'
+    url: '/nuevamascota',
+    public: false
   },
   nuevaraza: {
-    url: '/nuevaraza'
+    url: '/nuevaraza',
+    public: false
   },
   nuevopost: {
-    url: '/nuevopost'
+    url: '/nuevopost',
+    public: false
   },
   pets: {
-    url: '/mascotas'
+    url: '/mascotas',
+    public: true
   },
   registration: {
-    url: '/registro'
+    url: '/registro',
+    public: true
   },
   about: {
-    url: '/nosotros'
+    url: '/nosotros',
+    public: true
   },
   profile: {
-    url: '/perfil'
+    url: '/perfil',
+    public: false
   }
 }
 
@@ -42,3 +56,10 @@ export const TypePost = [
   'Quiero adoptar mascota',
   'Encontré mascota perdida'
 ]
+
+export enum PostTypeEnum {
+  BUSCO_MASCOTA = 'Busco mascota perdida',
+  OFREZCO_ADOPCION = 'Ofrezco mascota en adopcion',
+  QUIERO_ADOPTAR = 'Quiero adoptar mascota',
+  ENCONTRE_MASCOTA = 'Encontré mascota perdida'
+}

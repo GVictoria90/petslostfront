@@ -1,5 +1,12 @@
 import { User } from '../interfaces/user.interface'
 
+export interface RoutesType {
+  element: React.ReactNode
+  path: string
+  key: string
+  public?: boolean
+}
+
 // Define an interface for the context
 export interface UserContextType {
   user: User | null
@@ -48,6 +55,11 @@ export interface PostType {
 export interface PostResponseType {
   message: string
   idPost: number
+}
+
+export interface PetResponseType {
+  message: string
+  idPet: number
 }
 
 export interface ResponseType {

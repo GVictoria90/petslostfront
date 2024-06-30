@@ -9,10 +9,9 @@ import { LoginResponseType, ProfileResponseType } from '../types/MascotasTypes'
 
 export const Login: React.FC = () => {
   const navigate = useNavigate()
-  const { user, handleLogin, handleLogout } = useContext(UserContext)!
+  const { user, handleLogin } = useContext(UserContext)!
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [users, setUsers] = useState([])
   const [error, setError] = useState('')
   const [errors, setErrors] = useState<string[]>([])
 
@@ -64,7 +63,9 @@ export const Login: React.FC = () => {
         }
         handleLogin(loggedUser) // Pass the user object
         setError('¡Inicio de sesión exitoso!')
-        navigate(routes.profile.url)
+        setTimeout(() => {
+          navigate(routes.profile.url)
+        }, 500)
       }
     } else {
       setError('Nombre de usuario o contraseña incorrectos')

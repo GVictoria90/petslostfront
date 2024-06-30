@@ -34,7 +34,7 @@ export const NavBar: React.FC = () => {
   // }, [user])
 
   return (
-    <div className='text-white bg-two-dogs bg-two-dogs-mobile bg-cover md:bg-two-dogs-desk md:bg-auto'>
+    <nav className='text-white bg-two-dogs bg-two-dogs-mobile bg-cover md:bg-two-dogs-desk md:bg-auto'>
       <div className='flex justify-between items-center h-28 max-w-[1240px] mx-auto px-4'>
         {/* Logo */}
         <div>
@@ -110,6 +110,6 @@ export const NavBar: React.FC = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </nav>
   )
 }
