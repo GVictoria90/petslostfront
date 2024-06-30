@@ -88,7 +88,7 @@ export const Mascotas: React.FC = () => {
         {posts &&
           posts.map((post) => (
             <div
-              className='border-cuaternary-grade2 border-2 p-3 rounded-lg flex flex-col justify-between h-full'
+              className='border-secondary-grade5 border-2 p-3 rounded-lg flex flex-col justify-between h-full'
               key={post.idPost}
               id={`post-${post.idPost}`}>
               {post.pets[0] && post.pets[0].image !== undefined && (

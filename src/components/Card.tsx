@@ -1,6 +1,4 @@
 import React from 'react'
-// Importa el archivo CSS aquí
-import './Card.css';
 
 interface CardProps {
   imageUrl: string
