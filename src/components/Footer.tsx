@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className='flex justify-center bg-secondary-grade1'>
       <div className='flex justify-between items-center h-20 px-4 gap-4'>
-        <div className='text-primary-grade1 font-semibold font-sans'>
+        <div className='text-white font-semibold font-sans'>
           &copy; {currentYear} All rights reserved
         </div>
         <div className='flex space-x-4'>
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             rel='noopener noreferrer'>
             <AiOutlineInstagram
               size={24}
-              className='text-primary-grade1 font-semibold font-sans'
+              className='text-white font-semibold font-sans'
             />
           </a>
           <a
@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
             rel='noopener noreferrer'>
             <AiOutlineFacebook
               size={24}
-              className='text-primary-grade1 font-semibold font-sans'
+              className='text-white font-semibold font-sans'
             />
           </a>
           <a
@@ -40,13 +40,13 @@ export const Footer: React.FC = () => {
             rel='noopener noreferrer'>
             <AiOutlineWhatsApp
               size={24}
-              className='text-primary-grade1 font-semibold font-sans'
+              className='text-white font-semibold font-sans'
             />
           </a>
           <a href='tel:+1234567890' target='_blank' rel='noopener noreferrer'>
             <AiOutlinePhone
               size={24}
-              className='text-primary-grade1 font-semibold font-sans'
+              className='text-white font-semibold font-sans'
             />
           </a>
         </div>

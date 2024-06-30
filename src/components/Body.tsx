@@ -31,7 +31,7 @@ export const Body: React.FC = () => {
                   isAuthenticated() ? (
                     item.element
                   ) : (
-                    <Navigate to={routes.login.url} />
+                    <Navigate to={routes.home.url} />
                   )
                 ) : (
                   item.element

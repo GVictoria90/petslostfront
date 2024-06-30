@@ -4,6 +4,7 @@ import { UserContext } from '../components/UserProvider'
 import { routes } from '../constants'
 import { Post } from '../interfaces/post.interface'
 import { Title } from '../components/Title'
+import { ModalMascota } from '../components/ModalMascota'
 
 export const Mascotas: React.FC = () => {
   const navigate = useNavigate()
@@ -12,6 +13,11 @@ export const Mascotas: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const { user } = useContext(UserContext)!
+  // Info modals
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  const [modalImage, setModalImage] = useState<string>('second')
+  const [modalTitle, setModalTitle] = useState<string>('second')
+  const [modalText, setModalText] = useState<string>('second')
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -113,7 +119,10 @@ export const Mascotas: React.FC = () => {
                       className='text-center border-tertiary-grade2 border-2 text-tertiary-grade2 hover:bg-tertiary-grade2 hover:text-secondary-grade3 font-semibold rounded-3xl p-2 transition-all duration-500 ease-in-out'
                       type='button'
                       onClick={() => {
-                        navigate('#')
+                        setModalImage('')
+                        setModalTitle(post.title)
+                        setModalText(post.content)
+                        setIsModalOpen(true)
                       }}>
                       Ver publicación
                     </button>
@@ -123,6 +132,18 @@ export const Mascotas: React.FC = () => {
             </div>
           ))}
       </div>
+      <ModalMascota
+        isModalOpen={isModalOpen}
+        closeFunction={() => {
+          setIsModalOpen(false)
+          setModalImage('')
+          setModalTitle('')
+          setModalText('')
+        }}
+        imagenUrl={modalImage}
+        title={modalTitle}
+        text={modalText}
+      />
     </>
   )
 }
