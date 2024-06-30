@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
+import { isTokenValid } from '../utils/utils'
 
 interface LayoutProps {
   className?: string
@@ -7,6 +8,10 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ className, children }) => {
+  useEffect(() => {
+    isTokenValid()
+  }, [])
+
   return (
     <div
       className={twMerge(

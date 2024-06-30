@@ -14,6 +14,10 @@ export const routes = {
     url: '/login',
     public: true
   },
+  logout: {
+    url: '/logout',
+    public: false
+  },
   nuevamascota: {
     url: '/nuevamascota',
     public: false

@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { routes } from '../constants'
 import LFRoutes from '../routes/LFRoutes'
 import { RoutesType } from '../types/MascotasTypes'
+import { isTokenValid } from '../utils/utils'
 
 export const Body: React.FC = () => {
   const isAuthenticated = () => !!localStorage.getItem('user')
@@ -16,7 +17,8 @@ export const Body: React.FC = () => {
             routes.nuevamascota.url,
             routes.nuevaraza.url,
             routes.nuevopost.url,
-            routes.profile.url
+            routes.profile.url,
+            routes.logout.url
           ]
 
           // Check if the current route is protected
@@ -29,7 +31,11 @@ export const Body: React.FC = () => {
               element={
                 isProtectedRoute ? (
                   isAuthenticated() ? (
-                    item.element
+                    isTokenValid() ? (
+                      item.element
+                    ) : (
+                      <Navigate to={routes.logout.url} />
+                    )
                   ) : (
                     <Navigate to={routes.home.url} />
                   )

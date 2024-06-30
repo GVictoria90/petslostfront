@@ -1,5 +1,6 @@
 import { Layout } from '../components/components'
 import { basePathName, routes } from '../constants'
+import { Logout } from '../pages/Logout'
 import { Perfil } from '../pages/Perfil'
 import {
   Contacto,
@@ -114,6 +115,16 @@ const LFRoutes: RoutesType[] = [
     path: routes.login.url,
     key: routes.login.url,
     public: routes.login.public
+  },
+  {
+    element: (
+      <Layout>
+        <Logout />
+      </Layout>
+    ),
+    path: routes.logout.url,
+    key: routes.logout.url,
+    public: routes.logout.public
   },
   {
     element: (
