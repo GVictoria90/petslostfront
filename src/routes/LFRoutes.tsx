@@ -12,12 +12,7 @@ import {
   NuevoPost,
   Registro
 } from '../pages/pages'
-
-export interface RoutesType {
-  element: React.ReactElement
-  path: string
-  key: string
-}
+import { RoutesType } from '../types/MascotasTypes'
 
 const LFRoutes: RoutesType[] = [
   {
@@ -27,7 +22,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: basePathName,
-    key: routes.home.url
+    key: routes.home.url,
+    public: routes.home.public
   },
   {
     element: (
@@ -36,7 +32,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.home.url,
-    key: routes.home.url
+    key: routes.home.url,
+    public: routes.home.public
   },
   {
     element: (
@@ -45,7 +42,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.contact.url,
-    key: routes.contact.url
+    key: routes.contact.url,
+    public: routes.contact.public
   },
   {
     element: (
@@ -54,7 +52,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.pets.url,
-    key: routes.pets.url
+    key: routes.pets.url,
+    public: routes.pets.public
   },
   {
     element: (
@@ -63,7 +62,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.nuevamascota.url,
-    key: routes.nuevamascota.url
+    key: routes.nuevamascota.url,
+    public: routes.nuevamascota.public
   },
   {
     element: (
@@ -72,7 +72,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.nuevaraza.url,
-    key: routes.nuevaraza.url
+    key: routes.nuevaraza.url,
+    public: routes.nuevaraza.public
   },
   {
     element: (
@@ -81,7 +82,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.nuevopost.url,
-    key: routes.nuevopost.url
+    key: routes.nuevopost.url,
+    public: routes.nuevopost.public
   },
   {
     element: (
@@ -90,7 +92,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.about.url,
-    key: routes.about.url
+    key: routes.about.url,
+    public: routes.about.public
   },
   {
     element: (
@@ -99,7 +102,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.registration.url,
-    key: routes.registration.url
+    key: routes.registration.url,
+    public: routes.registration.public
   },
   {
     element: (
@@ -108,7 +112,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.login.url,
-    key: routes.login.url
+    key: routes.login.url,
+    public: routes.login.public
   },
   {
     element: (
@@ -117,7 +122,8 @@ const LFRoutes: RoutesType[] = [
       </Layout>
     ),
     path: routes.profile.url,
-    key: routes.profile.url
+    key: routes.profile.url,
+    public: routes.profile.public
   }
 ]
 

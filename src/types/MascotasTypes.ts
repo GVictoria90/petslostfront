@@ -1,5 +1,12 @@
 import { User } from '../interfaces/user.interface'
 
+export interface RoutesType {
+  element: React.ReactNode
+  path: string
+  key: string
+  public?: boolean
+}
+
 // Define an interface for the context
 export interface UserContextType {
   user: User | null
