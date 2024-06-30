@@ -56,3 +56,10 @@ export const TypePost = [
   'Quiero adoptar mascota',
   'Encontré mascota perdida'
 ]
+
+export enum PostTypeEnum {
+  BUSCO_MASCOTA = 'Busco mascota perdida',
+  OFREZCO_ADOPCION = 'Ofrezco mascota en adopcion',
+  QUIERO_ADOPTAR = 'Quiero adoptar mascota',
+  ENCONTRE_MASCOTA = 'Encontré mascota perdida'
+}

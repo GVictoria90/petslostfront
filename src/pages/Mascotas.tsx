@@ -5,6 +5,7 @@ import { routes } from '../constants'
 import { Post } from '../interfaces/post.interface'
 import { Title } from '../components/Title'
 import { ModalMascota } from '../components/ModalMascota'
+import { PetCard } from '../components/PetCard'
 
 export const Mascotas: React.FC = () => {
   const navigate = useNavigate()
@@ -48,14 +49,14 @@ export const Mascotas: React.FC = () => {
     fetchPosts()
   }, [])
 
-  // useEffect(() => {
-  //   console.log(posts)
-  // }, [posts])
-
   useEffect(() => {
-    console.log(user)
-    console.log(user?.role === 'admin')
-  }, [user])
+    console.log(posts)
+  }, [posts])
+
+  // useEffect(() => {
+  //   console.log(user)
+  //   console.log(user?.role === 'admin')
+  // }, [user])
 
   if (loading) {
     return <p>Loading...</p>
@@ -67,10 +68,10 @@ export const Mascotas: React.FC = () => {
 
   return (
     <>
-      <div className='flex justify-between text-center mb-6'>
+      <div className='flex flex-col md:flex-row justify-between text-center mb-6'>
         <Title as='h2'>Mascotas</Title>
         {user !== null && (
-          <div className='flex gap-4'>
+          <div className='flex justify-between gap-4'>
             <button
               className={`text-center border-tertiary-grade2 border-2 text-tertiary-grade2 hover:bg-tertiary-grade2 hover:text-secondary-grade3 font-semibold rounded-3xl p-2 transition-all duration-500 ease-in-out`}
               type='button'
@@ -92,44 +93,17 @@ export const Mascotas: React.FC = () => {
           </div>
         )}
       </div>
-      <div className='grid gap-x-2 gap-y-4 grid-cols-3'>
+      <div className='grid gap-x-2 gap-y-4 grid-cols-1 md:grid-cols-3'>
         {posts &&
           posts.map((post) => (
-            <div
-              className='border-secondary-grade5 border-2 p-3 rounded-lg flex flex-col justify-between h-full'
+            <PetCard
               key={post.idPost}
-              id={`post-${post.idPost}`}>
-              {post.pets[0] && post.pets[0].image !== undefined && (
-                <img
-                  src={`/img/${post.pets[0].image}`}
-                  width={150}
-                  height={150}
-                  alt='Imagen de la mascota'
-                  className='mb-4'
-                />
-              )}
-              <div className='flex flex-col justify-between flex-grow'>
-                <div className='mt-auto'>
-                  <div>
-                    <h5 className='card-title font-bold mb-1'>{post.title}</h5>
-                    <p className='card-text mb-4'>{post.content}</p>
-                  </div>
-                  <div className='flex justify-center'>
-                    <button
-                      className='text-center border-tertiary-grade2 border-2 text-tertiary-grade2 hover:bg-tertiary-grade2 hover:text-secondary-grade3 font-semibold rounded-3xl p-2 transition-all duration-500 ease-in-out'
-                      type='button'
-                      onClick={() => {
-                        setModalImage('')
-                        setModalTitle(post.title)
-                        setModalText(post.content)
-                        setIsModalOpen(true)
-                      }}>
-                      Ver publicación
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              post={post}
+              setModalImage={setModalImage}
+              setModalTitle={setModalTitle}
+              setModalText={setModalText}
+              setIsModalOpen={setIsModalOpen}
+            />
           ))}
       </div>
       <ModalMascota

@@ -2,7 +2,7 @@ import { Pet } from './pet.interface'
 
 export interface Post {
   idPost: number
-  typePost: string
+  selectedTypePost: string
   title: string
   content: string
   postDate: Date

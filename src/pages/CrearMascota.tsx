@@ -119,7 +119,7 @@ export const CrearMascota: React.FC = () => {
       return
     } else {
       const dataCreatedPet = responsePetAPI.data
-      console.log(dataCreatedPet)
+      console.log(responsePetAPI)
       navigate(routes.pets.url)
       // levantar modal
       // en modal cambiar estado de variable

@@ -1,18 +1,18 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Button } from '../components/Button'
+import { Title } from '../components/Title'
 import { UserContext } from '../components/UserProvider'
 import { routes } from '../constants'
-import { Title } from '../components/Title'
-import { Button } from '../components/Button'
 
 export const Perfil: React.FC = () => {
   const navigate = useNavigate()
   const { user, handleLogout } = useContext(UserContext)!
 
   useEffect(() => {
-    console.log(user)
     !user ? navigate(routes.login.url) : ''
   }, [user, navigate])
+
   return (
     <>
       <div>

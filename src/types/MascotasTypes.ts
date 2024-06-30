@@ -57,6 +57,11 @@ export interface PostResponseType {
   idPost: number
 }
 
+export interface PetResponseType {
+  message: string
+  idPet: number
+}
+
 export interface ResponseType {
   status: number
   message: string

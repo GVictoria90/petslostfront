@@ -1,16 +1,16 @@
 import { Layout } from '../components/components'
 import { basePathName, routes } from '../constants'
-import { Logout } from '../pages/Logout'
-import { Perfil } from '../pages/Perfil'
 import {
   Contacto,
   CrearMascota,
   CrearRaza,
   Inicio,
   Login,
+  Logout,
   Mascotas,
   Nosotros,
   NuevoPost,
+  Perfil,
   Registro
 } from '../pages/pages'
 import { RoutesType } from '../types/MascotasTypes'
